@@ -1,0 +1,33 @@
+<%- include('partials/header')  %> 
+<h1>LISTA</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var i = 0; i < tasks.length; i++){ %>
+            <tr>
+                <td> <%= i + 1  %>  </td>
+                <td> <%= tasks[i].id  %>  </td>
+                <td> <%= tasks[i].title  %>  </td>
+                <td> <%= tasks[i].status  %>  </td>
+                <td> <%= tasks[i].description  %>  </td>
+                <td>
+                    <a href="/estado/<%= tasks[i]._id %>" >Done</a>
+                    <a href="/edit/<%= tasks[i]._id %>" >Edit</a>
+                    <a href="/delete/<%= tasks[i]._id  %>" >Delete</a>
+                </td>
+            </tr>
+        <% } %> 
+    </tbody>
+</table>
+
+<%- include('partials/footer')  %> 

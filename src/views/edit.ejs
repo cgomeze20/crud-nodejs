@@ -1,0 +1,59 @@
+
+    <%- include('partials/header')  %> 
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+h1{
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+}
+
+    .formulario{
+        border: 2px solid #ccc;
+        max-width: 600px;
+        margin: 0 auto;
+        height: auto;
+    }
+
+    .navbar{
+    background-color: #26e;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    }
+
+    .navbar a{
+    color: #fff;
+    margin-right: 10px;
+    cursor: pointer;
+    padding-left: 10px;
+    }
+
+input{
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+    outline: none;
+    }
+       
+
+    </style>
+
+    <h1>Editar</h1>
+
+    <form action="/update/<%= task._id %> " class="formulario" method="POST">
+        <input type="text" placeholder="title" name="title"value="<%= task.title %> ">
+        <input type="text" placeholder="description" name="description" value="<%= task.description %> ">
+        <input type="submit" value="Update">
+    </form>
+
+    <%- include('partials/footer') %> 
